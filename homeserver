@@ -1,0 +1,38 @@
+server_name: "nimbo-synapse.onrender.com"
+pid_file: /data/homeserver.pid
+
+listeners:
+  - port: 8008
+    tls: false
+    type: http
+    x_forwarded: true
+    resources:
+      - names: [client, federation]
+        compress: false
+
+database:
+  name: sqlite3
+  args:
+    database: /data/homeserver.db
+
+log_config: "/data/nimbo-synapse.onrender.com.log.config"
+media_store_path: /data/media_store
+
+# ── Registration ─────────────────────────────────────────────
+enable_registration: true
+enable_registration_without_verification: true
+registration_shared_secret: "nimbo_super_secret_key_change_this_123"
+
+# ── Security ─────────────────────────────────────────────────
+macaroon_secret_key: "nimbo_macaroon_secret_change_this_456"
+form_secret: "nimbo_form_secret_change_this_789"
+signing_key_path: "/data/nimbo-synapse.onrender.com.signing.key"
+
+trusted_key_servers:
+  - server_name: "matrix.org"
+
+suppress_key_server_warning: true
+
+# ── Performance (free tier friendly) ─────────────────────────
+event_cache_size: 10K
+report_stats: false
