@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: nimbo-synapse
+    runtime: docker
+    dockerfilePath: ./Dockerfile
+    plan: free
+    envVars:
+      - key: SYNAPSE_SERVER_NAME
+        value: nimbo-synapse.onrender.com
+      - key: SYNAPSE_REPORT_STATS
+        value: "no"
+    disk:
+      name: synapse-data
+      mountPath: /data
+      sizeGB: 1
