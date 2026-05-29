@@ -26,6 +26,8 @@ media_store_path: /data/media_store
 # ── Registration ─────────────────────────────
 enable_registration: true
 enable_registration_without_verification: true
+registrations_require_3pid: false
+allow_guest_access: true
 
 registration_shared_secret: "nimbo_super_secret_key_change_this_123"
 
