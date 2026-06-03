@@ -19,29 +19,24 @@ database:
 log_config: "/data/log.config"
 media_store_path: /data/media_store
 
-# ── Registration ─────────────────────────────
 enable_registration: true
 enable_registration_without_verification: true
-registrations_require_3pid:[]
+registrations_require_3pid: []
 allow_guest_access: true
 registration_shared_secret: "nimbo_super_secret_key_change_this_123"
 
-# ── Security ─────────────────────────────
 macaroon_secret_key: "nimbo_macaroon_secret_change_this_456"
 form_secret: "nimbo_form_secret_change_this_789"
 trusted_key_servers:
   - server_name: "matrix.org"
 suppress_key_server_warning: true
 
-# ── Performance ─────────────────────────────
 event_cache_size: 10K
 report_stats: false
 
-# ── Directory ─────────────────────────────
 allow_public_rooms_without_auth: true
 allow_public_rooms_over_federation: true
 
-# ── User directory ─────────────────────────
 user_directory:
   enabled: true
   search_all_users: true
