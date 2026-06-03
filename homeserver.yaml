@@ -43,3 +43,6 @@ suppress_key_server_warning: true
 # ── Performance ─────────────────────────────
 event_cache_size: 10K
 report_stats: false
+# ── Directory ─────────────────────────────
+allow_public_rooms_without_auth: true
+allow_public_rooms_over_federation: true
