@@ -1,6 +1,13 @@
 FROM matrixdotorg/synapse:latest
+
 COPY homeserver.yaml /data/homeserver.yaml
-COPY log.config /data/log.config
+COPY log.config      /data/log.config
+
 RUN chown -R 991:991 /data
+
 EXPOSE 8008
+
+ENV SYNAPSE_LOG_LEVEL=INFO
+ENV SYNAPSE_CONFIG_PATH=/data/homeserver.yaml
+
 ENTRYPOINT ["/start.py"]
