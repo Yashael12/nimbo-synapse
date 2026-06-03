@@ -36,6 +36,10 @@ report_stats: false
 
 allow_public_rooms_without_auth: true
 allow_public_rooms_over_federation: true
+enable_room_list_search: true
+
+room_list_publication_rules:
+  - action: allow
 
 user_directory:
   enabled: true
