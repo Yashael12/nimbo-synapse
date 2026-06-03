@@ -41,15 +41,8 @@ report_stats: false
 allow_public_rooms_without_auth: true
 allow_public_rooms_over_federation: true
 
-# ── User directory (FIX: makes all users searchable) ──────
+# ── User directory ─────────────────────────
 user_directory:
   enabled: true
-  search_all_users: true        # ← users visible even before joining a shared room
-  prefer_local_users: true      # ← your server's users ranked first in results
-
-# ── Room directory (FIX: makes public rooms browsable) ────
-room_list_publication_rules:
-  - action: allow               # ← allows all rooms to be listed publicly
-
-# ── Retention (optional but good for SQLite) ──────────────
-forgotten_room_retention_period: 28d
+  search_all_users: true
+  prefer_local_users: true
