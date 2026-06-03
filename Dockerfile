@@ -1,6 +1,5 @@
 FROM matrixdotorg/synapse:latest
 
-# ← forces rebuild of all layers below when you change the date
 ARG CACHE_BUST=1
 
 COPY homeserver.yaml /data/homeserver.yaml
